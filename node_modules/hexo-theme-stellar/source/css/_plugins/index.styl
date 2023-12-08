@@ -1,0 +1,28 @@
+@import 'aplayer'
+
+// 根据主题配置加载
+if hexo-config('plugins.lazyload.enable')
+  @import 'lazyload'
+if hexo-config('plugins.swiper.enable')
+  @import 'swiper'
+if hexo-config('plugins.scrollreveal.enable')
+  @import 'scrollreveal'
+if hexo-config('plugins.fancybox.enable')
+  @import 'fancybox'
+if hexo-config('plugins.mermaid.enable')
+  @import 'mermaid'
+if hexo-config('plugins.copycode.enable')
+  @import 'copycode'
+
+
+// 评论
+if hexo-config('comments.service') == 'beaudar'
+  @import 'comments/beaudar'
+if hexo-config('comments.service') == 'twikoo'
+  @import 'comments/twikoo'
+if hexo-config('comments.service') == 'utterances'
+  @import 'comments/utterances'
+if hexo-config('comments.service') == 'waline'
+  @import 'comments/waline'
+if hexo-config('comments.service') == 'artalk'
+  @import 'comments/artalk'

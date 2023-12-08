@@ -1,0 +1,74 @@
+details.folding
+  display: block
+  padding: 1rem
+  margin: 1rem 0
+  border-radius: $border-block
+  background: var(--theme-bg2)
+  border: 1px solid var(--theme-border)
+  summary
+    cursor: pointer
+    padding: 1rem
+    margin: -1rem
+    color: var(--text-p2)
+    font-weight: 500
+    font-size: $fs-14
+    position: relative
+    line-height: 1.2
+    outline: none
+    >
+      span 
+        margin-left: 0.25em
+      p,h1,h2,h3,h4,h5,h6
+        display: inline
+        border-bottom: none !important
+    &:hover
+      color: var(--text-p0)
+    &:after
+      position: absolute
+      content: '+'
+      text-align: center
+      top: 50%
+      transform: translateY(-50%)
+      right: 1rem
+      line-height: 1
+
+
+details.folding[open]
+  >summary
+    color: var(--text-p1)
+    font-weight: 700
+    z-index 1
+    &:after
+      content: '-'
+  >div.body
+    padding: 0 1rem 1rem
+    margin: 0 -1rem -1rem
+    color: var(--text-p1)
+    >:first-child
+      margin-top: 1rem
+    >:last-child
+      margin-bottom: 0
+
+details.folding[child=codeblock]>div.body
+  padding: 0
+  background: transparent
+  overflow: hidden
+  .highlight
+    border: none
+    border-radius: 0
+    background: transparent
+    margin: 0
+    figcaption
+      display: none
+    .code:before
+      content: none
+
+details.folding[child=iframe]
+  overflow: hidden
+  background: none
+  >summary
+    background: none
+  >div.body
+    padding: 0
+    background: none
+    overflow: hidden
